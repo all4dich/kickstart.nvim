@@ -83,7 +83,8 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
-
+-- Custom
+vim.env.PATH = vim.env.PATH .. ':/opt/homebrew/bin'
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -213,7 +214,7 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
-vim.o.winborder = 'rounded'
+-- vim.o.winborder = 'rounded'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
@@ -815,7 +816,7 @@ require('lazy').setup({
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_installation = false,
+        -- automatic_installation = true,
         automatic_enable = true,
         handlers = {
           function(server_name)
