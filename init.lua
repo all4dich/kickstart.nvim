@@ -1216,3 +1216,11 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+----------
+-- User defined key maps
+-- Create key map shortcut for selecting next/previous buffer
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Next Buffer' })
+vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous Buffer' })
+vim.keymap.set('n', '<C-b>n', ':bnext<CR>', { desc = 'Next Buffer' })
+vim.keymap.set('n', '<C-b>p', ':bprevious<CR>', { desc = 'Previous Buffer' })
+
