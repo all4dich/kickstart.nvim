@@ -86,6 +86,10 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- Custom
 -- vim.env.PATH = vim.env.PATH .. ':/opt/homebrew/bin'
 -- vim.env.PATH = vim.env.PATH .. ':${HOME}/.local/bin'
+--- Add LLVM to PATH for clangd
+--- Before installing clangd via mason, make sure to install LLVM via homebrew if your system is macOS
+--- On MacOS: `brew install llvm`
+vim.env.PATH = vim.env.PATH .. ':/opt/homebrew/opt/llvm/bin'
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
