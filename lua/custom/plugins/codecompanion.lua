@@ -12,13 +12,15 @@ return {
     require("codecompanion").setup({
       -- Configuration options can be added here
      adapters = {
-      gemini = function()
-        return require("codecompanion.adapters").extend("gemini", {
-          env = {
-           api_key = os.getenv("GEMINI_API_KEY") or "",
-          },
-      })
-      end,
+      http = {
+          gemini = function()
+            return require("codecompanion.adapters").extend("gemini", {
+              env = {
+               api_key = os.getenv("GEMINI_API_KEY") or "",
+              },
+          })
+          end,
+      }
     },
     strategies = {
       chat = {
