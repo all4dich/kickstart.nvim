@@ -80,7 +80,7 @@ is running in the following environments:
 
    ```bash
    sudo apt install ssh keychain make cmake python3-cryptography \
-   clang-format automake autoconf pkg-config python3-pip clang \ 
+   clang-format automake autoconf pkg-config python3-pip clang \
    libtool-bin npm curl build-essential unzip gettext ninja-build \
    clang-tidy yacc libevent-dev bison libncurses-dev libsqlite3-dev
    ```
@@ -124,8 +124,8 @@ is running in the following environments:
 
    ```bash
    cd
-   wget https://raw.githubusercontent.com/guru245/dotfiles/refs/heads/main/.tmux.conf
-   wget https://raw.githubusercontent.com/guru245/dotfiles/refs/heads/main/truecolor-test
+   wget https://raw.githubusercontent.com/all4dich/dotfiles/refs/heads/main/.tmux.conf
+   wget https://raw.githubusercontent.com/all4dich/dotfiles/refs/heads/main/truecolor-test
    cd ~/.local/src
    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
    tmux
@@ -133,7 +133,7 @@ is running in the following environments:
 
    Press `<leader>`, i.e., `Ctrl+a` in this setting and then press `I`
    (capital) to install tmux plugins. You may want to run 
-   [`truecolor-test`](https://github.com/guru245/dotfiles/blob/main/truecolor-test) 
+   [`truecolor-test`](https://github.com/all4dich/dotfiles/blob/main/truecolor-test)
    to check if true color is working correctly.
 
 4. Install misc packages for Neovim
@@ -170,7 +170,7 @@ pip3 install pynvim
 
 ```bash
 cd ~/.local/src
-git clone https://github.com/guru245/kickstart.nvim.git
+git clone https://github.com/all4dich/kickstart.nvim.git
 cd
 mkdir .config
 ln -s ~/.local/src/kickstart.nvim ~/.config/nvim
