@@ -85,6 +85,15 @@ is running in the following environments:
    clang-tidy yacc libevent-dev bison libncurses-dev libsqlite3-dev
    ```
 
+   ```bash
+   ## Install Homebrew package manager
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+   ## Install required packages
+   brew install autoconf automake libtool pkg-config pcre2 wget ninja gettext cmake unzip curl
+   
+   ```
+
 2. Install [universal-ctags](https://github.com/universal-ctags/ctags)
 
    ```bash
@@ -118,6 +127,14 @@ is running in the following environments:
    LDFLAGS="-L${HOME}/.local/include \
    -L${HOME}/.local/include/ncurses -L${HOME}/.local/lib"
    make && make install
+   ```
+
+   ```bash
+   # 1. For Mac - Use brew
+   brew install tmux
+
+   # 2. Change `configure`'s argument 
+   ./configure --prefix=${HOME}/.local --enable-utf8proc
    ```
 
    Install tpm (Tmux Plugin Manager)
