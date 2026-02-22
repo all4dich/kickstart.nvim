@@ -44,7 +44,7 @@ return {
       { '<F3>', '<Cmd>TagbarToggle<CR>', desc = 'Tagbar' },
     },
     init = function()
-      vim.cmd 'let g:tagbar_left = 1'
+      vim.cmd 'let g:tagbar_left = 0'
       vim.cmd 'let g:tagbar_width = 30'
       vim.cmd 'let g:tagbar_sort = 1'
       vim.cmd 'let g:tagbar_autofocus = 1'

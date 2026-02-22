@@ -37,4 +37,5 @@ return {
       })
     end,
   },
+  vim.keymap.set('n', '<F4>', '<Cmd> Neotree<CR>'),
 }
