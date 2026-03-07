@@ -7,11 +7,8 @@ return {
     "nvim-telescope/telescope.nvim", -- Optional: for actions
     "stevearc/dressing.nvim" -- Optional: for UI enhancements
   },
-  config = function()
-    -- Load the codecompanion module
-    require("codecompanion").setup({
-      -- Configuration options can be added here
-     adapters = {
+  opts = {
+    adapters = {
       http = {
           gemini = function()
             return require("codecompanion.adapters").extend("gemini", {
@@ -20,17 +17,29 @@ return {
               },
           })
           end,
+          copilot = function()
+            return require("codecompanion.adapters").extend("copilot", {
+              env = {
+               api_key = os.getenv("COPILOT_API_KEY") or "",
+od
+              },
+          })
+          end,
       }
     },
     strategies = {
       chat = {
-        adapter = "gemini",
+        adapter = {
+          name = "copilot",
+          model = "gemini-3-pro-preview"
+        },
       },
       inline = {
-        adapter = "gemini",
+        adapter = "copilot",
+      },
+      cmd = {
+        adapter = "copilot",
       },
     },
-     -- For example, you can set up keybindings, UI options, etc.
-    })
-    end,
+  }
 }

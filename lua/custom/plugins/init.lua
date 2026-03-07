@@ -186,7 +186,7 @@ return {
           layout = {
             backdrop = false,
             width = 0.85,
-            min_width = 80,
+            min_width = 100,
             height = 0.85,
             min_height = 30,
             box = 'vertical',
