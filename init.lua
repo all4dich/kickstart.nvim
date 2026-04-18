@@ -1229,3 +1229,5 @@ vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous Buffer' }
 vim.keymap.set('n', '<C-b>n', ':bnext<CR>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<C-b>p', ':bprevious<CR>', { desc = 'Previous Buffer' })
 
+--- Custom ---
+require("config.git-claude")
