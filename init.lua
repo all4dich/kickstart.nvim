@@ -1231,3 +1231,6 @@ vim.keymap.set('n', '<C-b>p', ':bprevious<CR>', { desc = 'Previous Buffer' })
 
 --- Custom ---
 require("config.git-commit")
+-- vim.g.tagbar_ctags_bin = '/Users/sunjoo/.local/bin/ctags'  -- adjust to your path
+-- vim.g.tagbar_ctags_bin = vim.env.HOME .. '/.local/bin/ctags'
+vim.g.tagbar_ctags_bin = vim.fn.expand('$HOME/.local/bin/ctags')
