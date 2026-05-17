@@ -10,30 +10,14 @@ return {
   opts = {
     interactions = {
       adapters = {
-        acp = {
-          claude_code = function()
-              return require("codecompanion.adapters").extend("claude_code", {
-                env = {
-                  api_key = os.getenv("CLAUDE_API_KEY") or "",
-                }, 
-              })
-          end,
-        },
         http = {
---           gemini = function()
---               return require("codecompanion.adapters").extend("gemini", {
---                 env = {
---                   api_key = os.getenv("GEMINI_API_KEY") or "",
---                 }, 
---               })
---           end,
-          anthropic = function()
-              return require("codecompanion.adapters").extend("anthropic", {
-                env = {
-                  api_key = os.getenv("ANTHROPIC_API_KEY") or "",
-                }, 
-              })
-          end,
+           gemini = function()
+               return require("codecompanion.adapters").extend("gemini", {
+                 env = {
+                   api_key = os.getenv("GEMINI_API_KEY") or "",
+                 }, 
+               })
+           end,
         },
       },
       chat = {
