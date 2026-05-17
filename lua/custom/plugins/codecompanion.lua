@@ -8,38 +8,53 @@ return {
     "stevearc/dressing.nvim" -- Optional: for UI enhancements
   },
   opts = {
-    adapters = {
-      http = {
-          gemini = function()
-            return require("codecompanion.adapters").extend("gemini", {
-              env = {
-               api_key = os.getenv("GEMINI_API_KEY") or "",
-              },
-          })
+    interactions = {
+      adapters = {
+        acp = {
+          claude_code = function()
+              return require("codecompanion.adapters").extend("claude_code", {
+                env = {
+                  api_key = os.getenv("CLAUDE_API_KEY") or "",
+                }, 
+              })
           end,
-          copilot = function()
-            return require("codecompanion.adapters").extend("copilot", {
-              env = {
-               api_key = os.getenv("COPILOT_API_KEY") or "",
-od
-              },
-          })
-          end,
-      }
-    },
-    strategies = {
-      chat = {
-        adapter = {
-          name = "copilot",
-          model = "gemini-3-pro-preview"
         },
+        http = {
+--           gemini = function()
+--               return require("codecompanion.adapters").extend("gemini", {
+--                 env = {
+--                   api_key = os.getenv("GEMINI_API_KEY") or "",
+--                 }, 
+--               })
+--           end,
+          anthropic = function()
+              return require("codecompanion.adapters").extend("anthropic", {
+                env = {
+                  api_key = os.getenv("ANTHROPIC_API_KEY") or "",
+                }, 
+              })
+          end,
+        },
+      },
+      chat = {
+        adapter = "copilot",
+        model = "claude-opus-4.6",
       },
       inline = {
         adapter = "copilot",
+        model = "claude-opus-4.6",
       },
-      cmd = {
-        adapter = "copilot",
-      },
-    },
+      cli = {
+        agent = "claude_code",
+        agents = {
+          claude_code = {
+            cmd = "claude",
+            args = {},
+            description = "Claude Code CLI",
+            provider = "terminal",
+          }
+        },
+      }
+    }
   }
 }
