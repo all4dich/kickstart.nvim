@@ -22,11 +22,11 @@ return {
       },
       chat = {
         adapter = "copilot",
-        model = "claude-opus-4.6",
+        model = "claude-opus-4.8",
       },
       inline = {
         adapter = "copilot",
-        model = "claude-opus-4.6",
+        model = "claude-opus-4.8",
       },
       cli = {
         agent = "claude_code",
